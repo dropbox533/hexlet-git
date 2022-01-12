@@ -1,0 +1,7 @@
+const convolutionArr = ( arr ) => {
+  const reducer = ( first, second) => { 
+    let newArr = first.concat(second); 
+    return newArr;
+  };
+  return arr.reduce( reducer, arr[0]);
+} // convolutionArr([[1, 2], [3, 4] ]) => [1, 2, 3, 4];
