@@ -1,0 +1,8 @@
+const compareObj = ( obj1, obj2  ) => {
+  let arr = [];
+  for( let key1 in obj1)
+        { for( let key2 in obj2)
+            { arr.push(obj1[key1] === obj2[key1]) }  
+        }
+  return arr.length ===  arr.filter( x => x === true).length;      
+}; // Сравнивает обьекты, но выдает неккоретный результат если свойство является обьектом ( compareObj( {a: { a: 1} },  { a: {a: 1}) => false )//Доработать
