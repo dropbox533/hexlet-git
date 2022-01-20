@@ -1,0 +1,13 @@
+const arraytoList = ( arr, list = {} ) => {
+if(arr.length === 1) 
+        { list.value = arr.shift();
+          list.rest = null;
+          return list;
+        }  
+    list.value = arr.shift();
+    list.rest = {};   
+    arraytoList( arr, list.rest);
+    return list;
+}; 
+
+console.log(arraytoList([1,2,3]));// = > { value: 1, rest: { value: 2, rest: { value: 3, rest: null } } }
